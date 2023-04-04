@@ -89,5 +89,5 @@ function Header({ theme, setTheme }) {
     )
 }
 
-export default header
+export default Header
 
