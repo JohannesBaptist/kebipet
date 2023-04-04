@@ -78,7 +78,7 @@ function Header({ theme, setTheme }) {
                     <p className="!mr-[20px]">Customer serivce</p>
                     <div className="flex items-center justify-center ">
                         <span class=" text-[20px] fi fi-gb mt-[1px] mr-1 "></span>
-                        <p className="text-black  text-[15px]">EN</p>
+                        <p className="text-black  text-[15px]">ES</p>
                         <div className="w-5 h-5 relative text-black">
                             <ChevronDownIcon />
                         </div>
