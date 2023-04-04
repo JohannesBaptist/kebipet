@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import React from 'react'
 import Link from "next/link";
+import { useUser } from '@auth0/nextjs-auth0/client';
 import { SunIcon, MoonIcon, MagnifyingGlassCircleIcon, UserCircleIcon, ShoppingCartIcon, HeartIcon, ChevronDownIcon, FlagIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 
@@ -8,6 +9,7 @@ import { useRouter } from "next/router";
 export default function Control({ theme, setTheme }) {
 
     const router = useRouter()
+    const { user, error, isLoading } = useUser();
 
 
     return (
@@ -43,14 +45,23 @@ export default function Control({ theme, setTheme }) {
                     <div className="relative text-black w-7 h-7"><MagnifyingGlassCircleIcon /></div>
                 </div>
                 <div className="flex items-center justify-center space-x-5">
-                    <div className="bg-white rounded-full text-black flex items-center justify-center space-x-3 px-2 p-1">
-                        <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
-                        <div className="w-7 h-7 relative"><ShoppingCartIcon /></div>
-                        <Link href="/api/auth/login">login</Link>
-                    </div>
-                    <div className="w-7 h-7 relative text-red-400">
-                        <HeartIcon/>
+                    <div className=" text-black flex items-center justify-center space-x-4 px-2 p-1">
+                        { user ? 
+                        <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
+                            <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
+                            <Link href="/api/auth/login">login</Link>
                         </div>
+                        :
+                        <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
+                            <div onClick={() => router.push("/api/auth/logout")} className="w-7 h-7 relative"><UserCircleIcon /></div>
+                            <Link href="/api/auth/logout">logout</Link>
+                        </div>
+                         }
+                        <div className="w-7 h-7 relative"><ShoppingCartIcon /></div>
+                        <div className="w-7 h-7 relative text-red-400">
+                            <HeartIcon />
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="flex items-center justify-between bg-white p-4 h-[75px] px-[100px]">
