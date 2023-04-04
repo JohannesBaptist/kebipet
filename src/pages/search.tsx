@@ -4,7 +4,7 @@ import Footer from '@base/components/Footer'
 import FilterSearch from '@base/components/FilterSearch'
 import Head from 'next/head'
 
-function search() {
+function Search() {
     const [theme, setTheme] = useState(false)
     useEffect(() => {
       theme ? document.body.classList.add("dark", "bg-black") : document.body.classList.remove("dark", "bg-black");

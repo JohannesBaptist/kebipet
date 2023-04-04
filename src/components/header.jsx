@@ -43,7 +43,7 @@ function Header({ theme, setTheme }) {
                 </div>
                 <div className="flex items-center justify-center space-x-5">
                     <div className="bg-white rounded-full text-black flex items-center justify-center space-x-3 px-2 p-1">
-                        <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /><a href="/api/auth/login"></a></div>
+                        <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
                         <div className="w-7 h-7 relative"><ShoppingCartIcon /></div>
                     </div>
                     <div className="w-7 h-7 relative text-red-400">
