@@ -1,14 +1,20 @@
+import Advertisement from '@base/components/Advertisement'
+import Banner from '@components/Banner'
+import Categories from '@components/Categories'
+import Discounts from '@components/Discounts'
+import Footer from '@components/Footer'
 import Head from 'next/head'
+import Header from '@base/components/Header'
 import Image from 'next/image'
-import Header from '@components/header'
+import Pets from '@base/components/Pets'
 import { Inter } from 'next/font/google'
-
-
-
-
-const inter = Inter({ subsets: ['latin'] })
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [theme, setTheme] = useState(false)
+  useEffect(() => {
+    theme ? document.body.classList.add("dark", "bg-black") : document.body.classList.remove("dark", "bg-black");
+})
   return (
     <>
       <Head>
@@ -18,7 +24,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='w-screen h-screen'>
-        <Header />
+        <Header theme={theme} setTheme={setTheme} />
+        <Banner />
+        <Categories/>
+        <Discounts/>
+        <Advertisement/>
+        <Pets />
+        <Footer/>
       </main>
     </>
   )

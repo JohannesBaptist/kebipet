@@ -19,3 +19,9 @@
     }
 
 }
+
+@font-face {
+    font-family: "delicious";
+    src: url("../fonts/delicious-handrawn/DeliciousHandrawn-Regular.ttf");
+    font-weight: 900;
+}
