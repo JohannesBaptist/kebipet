@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon, MagnifyingGlassCircleIcon, UserCircleIcon, ShoppingC
 import { useRouter } from "next/router";
 
 
-function Header({ theme, setTheme }) {
+export default function Header({ theme, setTheme }) {
 
     const router = useRouter()
 
@@ -89,5 +89,5 @@ function Header({ theme, setTheme }) {
     )
 }
 
-export default Header
+
 
