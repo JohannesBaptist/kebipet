@@ -46,7 +46,7 @@ export default function Control({ theme, setTheme }) {
                 </div>
                 <div className="flex items-center justify-center space-x-5">
                     <div className=" text-black flex items-center justify-center space-x-4 px-2 p-1">
-                        { user ? 
+                        { !user ? 
                         <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
                             <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
                             <Link href="/api/auth/login">login</Link>
