@@ -4,7 +4,7 @@ import Categories from '@components/Categories'
 import Discounts from '@components/Discounts'
 import Footer from '@components/Footer'
 import Head from 'next/head'
-import Header from '../components/Header'
+import Control from '../components/Control'
 import Image from 'next/image'
 import Pets from '@base/components/Pets'
 import { Inter } from 'next/font/google'
@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='w-screen h-screen'>
-        <Header theme={theme} setTheme={setTheme} />
+        <Control theme={theme} setTheme={setTheme} />
         <Banner />
         <Categories/>
         <Discounts/>

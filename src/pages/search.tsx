@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../components/Header'
+import Control from '../components/Control'
 import Footer from '@base/components/Footer'
 import FilterSearch from '@base/components/FilterSearch'
 import Head from 'next/head'
@@ -18,7 +18,7 @@ function Search() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header theme={theme} setTheme={setTheme} />
+        <Control theme={theme} setTheme={setTheme} />
         <div className='w-full bg-blue-100 h-[50px]'></div>
         <div className='px-[100px] flex '>
           <FilterSearch />

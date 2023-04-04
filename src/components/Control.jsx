@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon, MagnifyingGlassCircleIcon, UserCircleIcon, ShoppingC
 import { useRouter } from "next/router";
 
 
-export default function Header({ theme, setTheme }) {
+export default function Control({ theme, setTheme }) {
 
     const router = useRouter()
 
