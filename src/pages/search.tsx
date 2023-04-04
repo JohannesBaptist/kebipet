@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Control from '../components/Control'
 import Footer from '@base/components/Footer'
+import SearchResults from '@base/components/SearchResults'
 import FilterSearch from '@base/components/FilterSearch'
 import Head from 'next/head'
 
@@ -22,7 +23,7 @@ function Search() {
         <div className='w-full bg-blue-100 h-[50px]'></div>
         <div className='px-[100px] flex '>
           <FilterSearch />
-
+          <SearchResults />
         </div>
         <Footer />
       </main>
