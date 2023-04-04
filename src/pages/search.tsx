@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Header from '@base/components/Header'
+import Header from '../components/Header'
 import Footer from '@base/components/Footer'
 import FilterSearch from '@base/components/FilterSearch'
 import Head from 'next/head'
