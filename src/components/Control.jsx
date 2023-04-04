@@ -45,6 +45,7 @@ export default function Control({ theme, setTheme }) {
                     <div className="bg-white rounded-full text-black flex items-center justify-center space-x-3 px-2 p-1">
                         <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
                         <div className="w-7 h-7 relative"><ShoppingCartIcon /></div>
+                        <a href="/api/auth/login">login</a>
                     </div>
                     <div className="w-7 h-7 relative text-red-400">
                         <HeartIcon/>
