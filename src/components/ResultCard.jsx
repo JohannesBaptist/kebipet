@@ -22,7 +22,7 @@ export default function ResultCard({ item }) {
           <p className="text-gray-700 font-light text-xs">{item.type}</p>
           <div className="star-rating text-black">
             {[...Array(item.stars)].map((star, index) => {
-              return <span key={indez} className="star">&#9733;</span>;
+              return <span key={index} className="star">&#9733;</span>;
             })}
             <span> {`(${item.reviews})`}</span>
           </div>

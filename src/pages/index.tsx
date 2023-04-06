@@ -13,7 +13,6 @@ import clientPromise from "@base/lib/mongodb";
 import { ObjectId } from "mongodb";
 
 export default function Home({setting}: any) {
-  console.log(setting)
   const [theme, setTheme] = useState(false);
   useEffect(() => {
     theme
