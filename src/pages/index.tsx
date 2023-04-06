@@ -1,7 +1,7 @@
 import Advertisement from "@base/components/Advertisement";
 import Banner from "@components/Banner";
 import Categories from "@components/Categories";
-import Discounts from "@components/Discounts";
+import Deals from "@components/Deals";
 import Footer from "@components/Footer";
 import Head from "next/head";
 import Control from "../components/Control";
@@ -9,8 +9,11 @@ import Image from "next/image";
 import Pets from "@base/components/Pets";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
+import clientPromise from "@base/lib/mongodb";
+import { ObjectId } from "mongodb";
 
-export default function Home() {
+export default function Home({setting}: any) {
+  console.log(setting)
   const [theme, setTheme] = useState(false);
   useEffect(() => {
     theme
@@ -25,15 +28,42 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-screen h-screen">
+      <main>
+        
         <Control theme={theme} setTheme={setTheme} />
         <Banner />
         <Categories />
-        <Discounts />
+        <Deals />
         <Advertisement />
         <Pets />
+        
         <Footer />
       </main>
     </>
   );
 }
+
+export async function getStaticProps() {
+
+ 
+  const client = await clientPromise;
+  const db = client.db("sample_airbnb");
+  const usersetting = await db
+    .collection("listingsAndReviews")
+    .find({})
+    .limit(20)
+    .toArray();
+  const setting = JSON.parse(JSON.stringify(usersetting))
+  {/*const fetcher = await fetch(jsonDirectory, {
+    method: "POST",
+    body: "AMessage"
+  })*/}
+  //const currentmail1 = await fetcher.json()
+  //const data = currentmail1[0].html
+
+  return {
+    props: {setting},
+    revalidate: 1,
+  };
+}
+

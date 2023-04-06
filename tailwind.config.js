@@ -7,10 +7,16 @@ module.exports = {
  
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
+    
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        base: "#67fecb"
+      },
+    },
   },
+
   plugins: [],
 }

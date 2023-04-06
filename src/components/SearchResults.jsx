@@ -6,7 +6,7 @@ import ResultCard from '@components/ResultCard'
 const item = [
   {
     image: "/sample.jpg",
-    price: "9,99",
+    price: "9,9",
     manufactor: "Lapi Toys",
     product:
       "Lapi Toys - Dungeons and dragons essential kit - D&D polydice tray - Dnd dice tray - Dobbelsteenbak met deksel - Dobbelpiste - Rolling tray - Pitjesbak - Inclusief 5 sets dobbelstenen",
@@ -18,7 +18,7 @@ const item = [
   },
   {
     image: "/sample.jpg",
-    price: "9,99",
+    price: "98888,99",
     manufactor: "Lapi Toys",
     product:
       "Lapi Toys - Dungeons and dragons essential kit - D&D polydice tray - Dnd dice tray - Dobbelsteenbak met deksel - Dobbelpiste - Rolling tray - Pitjesbak - Inclusief 5 sets dobbelstenen",
@@ -78,11 +78,11 @@ const item = [
   },
 ];
 
-export default function SearchResults() {
+export default function SearchResults({data}) {
   return (
     <div className="flex-grow">
-      <div className="h-[150px] flex flex-col px-2 pb-5 justify-between">
-        <p className="font-black text-3xl mt-[25px]">
+      <div className="h-[150px] flex flex-col px-5 py-5  justify-between">
+        <p className="font-black text-[30px] mt-[25px]">
           'Input' in All Categories
         </p>
         <p className="font-black text-2xl font-[delicious]">

@@ -6,8 +6,11 @@
   html {
     @apply dark:bg-black text-white;
   }
+  input {
+    @apply focus:outline-none;
+  }
   body {
-    @apply w-screen min-h-screen;
+    @apply overflow-x-hidden;
   }
 
   p {
@@ -23,10 +26,27 @@
   .product-card {
     @apply border-solid border-black first:border-t-[1px] border-b-[1px];
   }
+
+  .discount-box {
+    @apply bg-red-600 px-2 p-1 rounded-md font-bold text-white mt-4;
+  }
+
+  .newStoreBox {
+    @apply bg-blue-400 px-2 p-1 rounded-md font-bold text-white mt-4;
+  }
+
+  .discount-p {
+    @apply text-xs font-bold text-[10px] text-red-600 mt-1;
+  }
+
+  .link {
+    @apply hover:cursor-pointer hover:underline
+  }
 }
 
 @font-face {
   font-family: "delicious";
   src: url("../fonts/delicious-handrawn/DeliciousHandrawn-Regular.ttf");
-  font-weight: 900;
 }
+
+

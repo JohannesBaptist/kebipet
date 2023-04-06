@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { SunIcon, MoonIcon, MagnifyingGlassCircleIcon, UserCircleIcon, ShoppingCartIcon, HeartIcon, ChevronDownIcon, FlagIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
-
+import { SocialIcon } from 'react-social-icons';
+import MobileHeader from "@mobile/MobileHeader"
 
 export default function Control({ theme, setTheme }) {
 
@@ -13,8 +14,9 @@ export default function Control({ theme, setTheme }) {
 
 
     return (
-        <>
-            <div className=" bg-black flex items-center justify-between w-full h-[30px]  p-4 px-[100px]">
+        <><MobileHeader />
+        <div className="hidden lg:block"> 
+            <div className="bg-black flex items-center justify-between w-full h-[30px]  p-4 px-[100px]">
                 <div className="flex items-center justify-center text-white text-sm space-x-5">
                     <p className="text-white"><span className="text-bold text-[#67fecb]">Free</span> from 20 euros</p>
                     <p className="text-white">Delivery the same day, during the evening or day.</p>
@@ -45,7 +47,7 @@ export default function Control({ theme, setTheme }) {
                     <div className="relative text-black w-7 h-7"><MagnifyingGlassCircleIcon /></div>
                 </div>
                 <div className="flex items-center justify-center space-x-5">
-                    <div className=" text-black flex items-center justify-center space-x-4 px-2 p-1">
+                    <div className=" text-black flex items-center justify-center space-x-4">
                         { !user ? 
                         <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
                             <div onClick={() => router.push("/api/auth/login")} className="w-7 h-7 relative"><UserCircleIcon /></div>
@@ -57,10 +59,8 @@ export default function Control({ theme, setTheme }) {
                             <Link href="/api/auth/logout">logout</Link>
                         </div>
                          }
-                        <div className="w-7 h-7 relative"><ShoppingCartIcon /></div>
-                        <div className="w-7 h-7 relative text-red-400">
-                            <HeartIcon />
-                        </div>
+                        <div className="w-7 h-7 relative"><ShoppingCartIcon /></div> 
+                            <SocialIcon bgColor={""} style={{height: "30px", width: "30px"}} url="https://instagram.com/kebipet2023/?igshid=YmMyMTA2M2Y%3D"/>
                     </div>
                 </div>
             </div>
@@ -98,6 +98,7 @@ export default function Control({ theme, setTheme }) {
                     </div>
                 </div>
             </div>
+        </div>
         </>
     )
 }
