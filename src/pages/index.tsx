@@ -22,8 +22,8 @@ export default function Home({setting}: any) {
   return (
     <>
       <Head>
-        <title>New Project</title>
-        <meta name="description" content="A blank Tailwind template" />
+        <title>KebiPets - Homepage</title>
+        <meta name="description" content="Your Favourite Pet Palace" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

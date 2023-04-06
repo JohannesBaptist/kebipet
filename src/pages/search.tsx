@@ -18,8 +18,8 @@ export default function Search({ data }: any) {
   return (
     <>
       <Head>
-        <title>Search Page</title>
-        <meta name="description" content="Search Results" />
+        <title>KebiPets - Search Page</title>
+        <meta name="description" content="Your Favourite Pet Palace" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
