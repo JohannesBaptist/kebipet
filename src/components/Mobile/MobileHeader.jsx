@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import {
@@ -12,18 +12,20 @@ import {
   HeartIcon,
   MagnifyingGlassCircleIcon,
 } from "@heroicons/react/24/outline";
+import MobileHeaderCollapsed from "./MobileHeaderCollapsed";
 
 function MobileHeader() {
   const { user } = useUser();
   const router = useRouter();
+  const [mobile, setMobile] = useState(false);
   return (
     <div className="lg:hidden flex flex-col items-center w-screen justify-center">
       <div className="bg-black flex items-center justify-between w-full h-[40px] p-2">
         <div className="flex items-center justify-center text-white text-sm space-x-5">
           <p className="text-white shrink-0 text-[10px]">
-            <span className="text-bold text-[10px] text-[#67fecb]">Free</span> Delivery from 20 euros 
+            <span className="text-bold text-[10px] text-[#67fecb]">Free</span>{" "}
+            Delivery from 20 euros
           </p>
-          
         </div>
         <div className="flex shrink-0 text-[0.8rem] items-center font-[delicious] text-lg text-[#67fecb] tracking-wider justify-center">
           MyKebi See the benefits
@@ -31,9 +33,17 @@ function MobileHeader() {
       </div>
       <div className="w-full flex items-center justify-between p-5">
         <div id={"bars"} className="flex items-center justify-center space-x-4">
-          <div className="relative w-7 h-7 text-black">
+          <div
+            onClick={() => setMobile(true)}
+            className="relative w-7 h-7 text-black"
+          >
             <Bars3Icon />
           </div>
+          { mobile &&
+          <MobileHeaderCollapsed setMobile={setMobile} />
+          }
+
+
           <div className="flex items-center justify-center space-x-[1px]">
             <span className="text-purple-500 text-3xl font-[delicious]">K</span>
             <span className="text-red-800 text-2xl">e</span>
@@ -55,7 +65,9 @@ function MobileHeader() {
                   >
                     <UserCircleIcon />
                   </div>
-                  <Link className="text-sm" href="/api/auth/login">login</Link>
+                  <Link className="text-sm" href="/api/auth/login">
+                    login
+                  </Link>
                 </div>
               ) : (
                 <div className="bg-black text-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
@@ -65,7 +77,9 @@ function MobileHeader() {
                   >
                     <UserCircleIcon />
                   </div>
-                  <Link className="text-sm" href="/api/auth/logout">logout</Link>
+                  <Link className="text-sm" href="/api/auth/logout">
+                    logout
+                  </Link>
                 </div>
               )}
               <div className="w-6 h-6 relative ">
