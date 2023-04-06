@@ -1,5 +1,5 @@
 import { HeartIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import MobileDeals from "./mobile/MobileDeals";
+import MobileDeals from "@mobile/MobileDeals";
 
 export default function Deals() {
   return (
