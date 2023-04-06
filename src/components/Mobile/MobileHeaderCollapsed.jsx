@@ -15,7 +15,7 @@ function MobileHeaderCollapsed({ setMobile }) {
           </div>
         </div>
         <div className="h-full w-full overflow-scroll">
-          <div className="pl-4 w-full pb-[100px]">
+          <div className="pl-4 w-full pb-[150px]">
             <div className="w-full border-b-[1px] border-solid border-gray-200  py-3 h-[100px] w-full flex items-center justify-start space-x-4">
               <div className="bg-purple-200 h-full w-auto aspect-square"></div>
               <p className="text-sm text-gray-800">Dog Toys</p>
