@@ -8,6 +8,7 @@ export default function ResultCard({ item }) {
         <div className="py-10 px-0 h-full ">
           <div className="relative min-w-[210px] p-[5px] h-full w-auto">
             <Image
+              alt="item"
               fill
               objectFit={"contain"}
               quality={"100"}
@@ -20,8 +21,8 @@ export default function ResultCard({ item }) {
           <p className="text-black font-bold text-xs">{item.product}</p>
           <p className="text-gray-700 font-light text-xs">{item.type}</p>
           <div className="star-rating text-black">
-            {[...Array(item.stars)].map((star) => {
-              return <span className="star">&#9733;</span>;
+            {[...Array(item.stars)].map((star, index) => {
+              return <span key={indez} className="star">&#9733;</span>;
             })}
             <span> {`(${item.reviews})`}</span>
           </div>

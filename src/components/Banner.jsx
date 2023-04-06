@@ -14,7 +14,8 @@ function Banner() {
             A spoiled pet, is a happy pet.
           </p>
           <Image
-            className="absolute right-0 top-0 rounded-e-md "
+            className="absolute right-0 top-0 rounded-e-md"
+            alt="dog"
             height={317}
             width={317}
             objectFit={"cover"}

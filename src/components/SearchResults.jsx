@@ -83,7 +83,7 @@ export default function SearchResults({data}) {
     <div className="flex-grow">
       <div className="h-[150px] flex flex-col px-5 py-5  justify-between">
         <p className="font-black text-[30px] mt-[25px]">
-          'Input' in All Categories
+        &apos;Input&apos; in All Categories
         </p>
         <p className="font-black text-2xl font-[delicious]">
           {" "}
@@ -91,8 +91,8 @@ export default function SearchResults({data}) {
         </p>
       </div>
       <div>
-        {item.map((i) => {
-          return <ResultCard item={i} />;
+        {item.map((i, index) => {
+          return <ResultCard key={index} item={i} />;
         })}
       </div>
     </div>
