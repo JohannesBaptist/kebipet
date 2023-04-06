@@ -5,11 +5,17 @@ import ReactRemoveScroll from "react-remove-scroll/dist/es5/Combination";
 function MobileHeaderCollapsed({ setMobile }) {
   return (
     <ReactRemoveScroll>
-      <div className="absolute top-0 z-[100] !m-0 left-0 bottom-0 right-0 bg-white w-screen h-[100dvh]">
-       
-        
+      <div className="absolute top-0 z-[100] !m-0 left-0 bottom-0 right-0 bg-white w-screen h-[100vh]">
+        <div className="border-[1px] border-solid border-gray-200 flex items-center p-2 py-6 justify-end">
+          <div
+            onClick={() => setMobile(false)}
+            className="relative w-8 h-8  text-black p-1"
+          >
+            <XMarkIcon />
+          </div>
+        </div>
         <div className="h-full w-full overflow-scroll">
-          <div className="pl-4 w-full">
+          <div className="pl-4 w-full pb-[100px]">
             <div className="w-full border-b-[1px] border-solid border-gray-200  py-3 h-[100px] w-full flex items-center justify-start space-x-4">
               <div className="bg-purple-200 h-full w-auto aspect-square"></div>
               <p className="text-sm text-gray-800">Dog Toys</p>
