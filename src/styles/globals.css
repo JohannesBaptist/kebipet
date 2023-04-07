@@ -59,6 +59,11 @@
   src: url("../fonts/delicious-handrawn/DeliciousHandrawn-Regular.ttf");
 }
 
+@font-face {
+  font-family: "teko";
+  src: url("../fonts/teko/TekoBold.ttf");
+}
+
 input:focus::placeholder {
   color: transparent;
 }

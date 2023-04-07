@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState, useEffect } from "react";
 import Head from "next/head";
 import {
   UserCircleIcon,
@@ -34,9 +34,18 @@ const reducer = (state, action) => {
       postal: action.postal,
     };
   }
-};
+}
 
-export default function Data() {
+
+
+export default function Data({data}) {
+
+
+
+
+
+
+
  
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -69,7 +78,7 @@ export default function Data() {
               <BellIcon />
               <div className={`h-2 w-2 ${ notifications ? "bg-green-400" : "bg-red-500"} rounded-full absolute right-1 top-0`}></div>
             </div>
-            <div className="h-[25px] aspect-square bg-purple-200 rounded-full"></div>
+            <div style={{backgroundImage: "url('/profile.png')"}}  className="h-[25px] bg-cover aspect-square bg-purple-200 rounded-full"></div>
             <p className="text-gray-800 hover:cursor-pointer text-sm">{`${state.firstName} ${state.lastName}`}</p>
             <div className=" !ml-1 mt-1 text-black w-3 h-3 relative ">
               <ChevronDownIcon />
@@ -114,7 +123,7 @@ export default function Data() {
           <div className="flex-grow flex flex-col">
             <div className="w-full h-[200px] flex items-center px-10 md:px-20 lg:px-40 pt-[80px] ">
               <div className="row-center space-x-10">
-                <div className="h-[150px] aspect-square shadow-lg hover:cursor-pointer rounded-full bg-purple-500"></div>
+                <div style={{backgroundImage: "url('/profile.png')"}} className=" bg-cover h-[150px] aspect-square shadow-lg hover:cursor-pointer rounded-full "></div>
                 <div className="flex flex-col">
                   <p className="text-xl text-gray-800 ">{`${state.firstName} ${state.lastName}`}</p>
                   <p className="text-gray-500 text-sm !m-0 font-light">
@@ -218,4 +227,13 @@ export default function Data() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps(){
+  const res = await fetch("https://www.jsonkeeper.com/b/L1QC")
+  
+  const data = await res.json()
+  return {
+    props: {data}
+  }
 }
