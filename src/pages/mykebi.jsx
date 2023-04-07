@@ -46,6 +46,7 @@ export default function Data() {
   const [email, setEmail] = useState(initialState.email);
   const [number, setNumber] = useState(initialState.number);
   const [postal, setPostal] = useState(initialState.postal);
+  const [notifications, setNotifications] = useState(true)
 
   return (
     <>
@@ -60,16 +61,17 @@ export default function Data() {
           id={"header"}
           className="bg-white  p-5 md:px-[50px] h-[60px] border-b-[1px] border-solid border-gray-300 row-center justify-between "
         >
-          <div className="w-7 h-7 text-black relative">
+          <div className="hover:cursor-pointer w-7 h-7 text-black relative">
             <Bars3Icon />
           </div>
           <div className="row-center space-x-4">
-            <div className="w-7 h-7 text-black relative">
+            <div onClick={() => setNotifications(!notifications)} className="w-7 hover:cursor-pointer h-7 text-black relative">
               <BellIcon />
+              <div className={`h-2 w-2 ${ notifications ? "bg-green-400" : "bg-red-500"} rounded-full absolute right-1 top-0`}></div>
             </div>
             <div className="h-[25px] aspect-square bg-purple-200 rounded-full"></div>
-            <p className="text-gray-800 text-sm">{`${state.firstName} ${state.lastName}`}</p>
-            <div className=" !ml-1 mt-1 text-black w-3 h-3 relative">
+            <p className="text-gray-800 hover:cursor-pointer text-sm">{`${state.firstName} ${state.lastName}`}</p>
+            <div className=" !ml-1 mt-1 text-black w-3 h-3 relative ">
               <ChevronDownIcon />
             </div>
           </div>
@@ -80,19 +82,19 @@ export default function Data() {
               <p className="font-bold text-lg font-[delicious] text-[1.2rem] lg:text-[1.7rem]"><span className="font-[delicious]">MyKebi</span> Profile</p>
             </div>
             <div className="col-center py-10 space-y-8">
-              <div className="row-center md:pr-10 w-full px-5 p-2 lg:pl-3   space-x-3 text-gray-800 rounded-[-5px] border-r-[5px] border-solid border-orange-500">
+              <div className=" hover:cursor-pointer row-center md:pr-10 w-full px-5 p-2 lg:pl-3   space-x-3 text-gray-800 rounded-[-5px] border-r-[5px] border-solid border-orange-500">
                 <div className="w-6 h-6 relative">
                   <UserIcon />
                 </div>
                 <p>User Info</p>
               </div>
-              <div className="row-center md:pr-10 w-full px-5 p-2 lg:pl-3 lg: space-x-3 text-gray-800  ">
+              <div className=" hover:cursor-pointer row-center md:pr-10 w-full px-5 p-2 lg:pl-3 lg: space-x-3 text-gray-800  ">
                 <div className="w-6 h-6 relative">
                   <HeartIcon />
                 </div>
                 <p>Favorites</p>
               </div>
-              <div className="row-center md:pr-10 w-full px-5 p-2 lg:pl-3  space-x-3 text-gray-800  ">
+              <div className=" hover:cursor-pointer row-center md:pr-10 w-full px-5 p-2 lg:pl-3  space-x-3 text-gray-800  ">
                 <div className="w-6 h-6 relative">
                   <StarIcon />
                 </div>
@@ -100,7 +102,7 @@ export default function Data() {
               </div>
             </div>
             <div className="relative flex items-end py-[50px] justify-center flex-grow ">
-              <div className="row-center space-x-3">
+              <div className="row-center hover:cursor-pointer space-x-3">
                 <div className="w-7 h-7 relative text-orange-500">
                   <ArrowLeftCircleIcon />
                 </div>
@@ -112,7 +114,7 @@ export default function Data() {
           <div className="flex-grow flex flex-col">
             <div className="w-full h-[200px] flex items-center px-10 md:px-20 lg:px-40 pt-[80px] ">
               <div className="row-center space-x-10">
-                <div className="h-[150px] aspect-square shadow-lg rounded-full bg-purple-500"></div>
+                <div className="h-[150px] aspect-square shadow-lg hover:cursor-pointer rounded-full bg-purple-500"></div>
                 <div className="flex flex-col">
                   <p className="text-xl text-gray-800 ">{`${state.firstName} ${state.lastName}`}</p>
                   <p className="text-gray-500 text-sm !m-0 font-light">
