@@ -28,14 +28,12 @@ export default function Home({setting}: any) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main>
-        
         <Control theme={theme} setTheme={setTheme} />
         <Banner />
         <Categories />
         <Deals />
         <Advertisement />
         <Pets />
-        
         <Footer />
       </main>
     </>

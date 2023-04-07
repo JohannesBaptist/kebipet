@@ -4,10 +4,15 @@ import Footer from "@base/components/Footer";
 import SearchResults from "@base/components/SearchResults";
 import FilterSearch from "@base/components/FilterSearch";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import clientPromise from "@base/lib/mongodb";
 import { ObjectId } from "mongodb";
 
 export default function Search({ data }: any) {
+  const router = useRouter()
+  const {search} = router.query
+
+
   const [theme, setTheme] = useState(false);
   useEffect(() => {
     theme
@@ -28,7 +33,7 @@ export default function Search({ data }: any) {
         <div className="w-full bg-blue-100 h-[50px]"></div>
         <div className="px-[100px] flex ">
           <FilterSearch />
-          <SearchResults data={data} />
+          <SearchResults search={search} data={data} />
         </div>
         <Footer />
       </main>

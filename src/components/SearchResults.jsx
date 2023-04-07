@@ -78,12 +78,12 @@ const item = [
   },
 ];
 
-export default function SearchResults({data}) {
+export default function SearchResults({data, search}) {
   return (
     <div className="flex-grow">
       <div className="h-[150px] flex flex-col px-5 py-5  justify-between">
         <p className="font-black text-[30px] mt-[25px]">
-        &apos;Input&apos; in All Categories
+        {`${search ? search : "" } in All Categories`}
         </p>
         <p className="font-black text-2xl font-[delicious]">
           {" "}

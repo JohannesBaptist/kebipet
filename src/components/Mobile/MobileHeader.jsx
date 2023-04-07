@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import {
@@ -17,6 +17,7 @@ import MobileHeaderCollapsed from "./MobileHeaderCollapsed";
 function MobileHeader() {
   const { user } = useUser();
   const router = useRouter();
+  const [search, setSearch] = useState("");
   const [mobile, setMobile] = useState(false);
   return (
     <div className="lg:hidden flex flex-col items-center w-screen justify-center">
@@ -39,10 +40,7 @@ function MobileHeader() {
           >
             <Bars3Icon />
           </div>
-          { mobile &&
-          <MobileHeaderCollapsed setMobile={setMobile} />
-          }
-
+          {mobile && <MobileHeaderCollapsed setMobile={setMobile} />}
 
           <div className="flex items-center justify-center space-x-[1px]">
             <span className="text-purple-500 text-3xl font-[delicious]">K</span>
@@ -98,10 +96,17 @@ function MobileHeader() {
       >
         <div className="items-center justify-center flex w-full bg-white rounded-full pr-2">
           <input
-            placeHolder={"Que estas buscando"}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={"Que estas buscando"}
             className=" pl-5 w-full h-[50px] text-black rounded-full"
           />
-          <div className="w-10 !m-0  pt-[2px] text-black h-10 relative ">
+          <div
+            onClick={() => router.push({ 
+              pathname: "/search",
+              query: {search}
+          }, "/search")}
+            className="w-10 !m-0  pt-[2px] text-black h-10 relative "
+          >
             <MagnifyingGlassCircleIcon />
           </div>
         </div>

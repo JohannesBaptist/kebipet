@@ -2,7 +2,6 @@ import Image from "next/image";
 import { HeartIcon, InformationCircleIcon, ShoppingCartIcon, StarIcon } from "@heroicons/react/24/outline";
 
 export default function ResultCard({ item }) {
-    console.log(item.manufactor);
     return (
       <div className="relative w-full h-[250px] product-card first:border-t-[1px] flex justify-start items-center">
         <div className="py-10 px-0 h-full ">
