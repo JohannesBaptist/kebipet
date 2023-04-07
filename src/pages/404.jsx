@@ -13,7 +13,7 @@ export default function Home({ data }) {
   return (
     <>
       <Head>
-        <title>Base | 404: Not Found</title>
+        <title>KebiPets | 404: Not Found</title>
         <meta
           name="description"
           content="A blank Tailwind template made by Sample-IT"
