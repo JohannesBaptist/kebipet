@@ -1,4 +1,5 @@
 import { useReducer, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import {
   UserCircleIcon,
@@ -34,19 +35,10 @@ const reducer = (state, action) => {
       postal: action.postal,
     };
   }
-}
+};
 
-
-
-export default function Data({data}) {
-
-
-
-
-
-
-
- 
+export default function Data({ data }) {
+  const router = useRouter();
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const [firstName, setFirstName] = useState(initialState.firstName);
@@ -55,7 +47,7 @@ export default function Data({data}) {
   const [email, setEmail] = useState(initialState.email);
   const [number, setNumber] = useState(initialState.number);
   const [postal, setPostal] = useState(initialState.postal);
-  const [notifications, setNotifications] = useState(true)
+  const [notifications, setNotifications] = useState(true);
 
   return (
     <>
@@ -74,11 +66,21 @@ export default function Data({data}) {
             <Bars3Icon />
           </div>
           <div className="row-center space-x-4">
-            <div onClick={() => setNotifications(!notifications)} className="w-7 hover:cursor-pointer h-7 text-black relative">
+            <div
+              onClick={() => setNotifications(!notifications)}
+              className="w-7 hover:cursor-pointer h-7 text-black relative"
+            >
               <BellIcon />
-              <div className={`h-2 w-2 ${ notifications ? "bg-green-400" : "bg-red-500"} rounded-full absolute right-1 top-0`}></div>
+              <div
+                className={`h-2 w-2 ${
+                  notifications ? "bg-green-400" : "bg-red-500"
+                } rounded-full absolute right-1 top-0`}
+              ></div>
             </div>
-            <div style={{backgroundImage: "url('/profile.png')"}}  className="h-[25px] bg-cover aspect-square bg-purple-200 rounded-full"></div>
+            <div
+              style={{ backgroundImage: "url('/profile.png')" }}
+              className="h-[25px] bg-cover aspect-square bg-purple-200 rounded-full"
+            ></div>
             <p className="text-gray-800 hover:cursor-pointer text-sm">{`${state.firstName} ${state.lastName}`}</p>
             <div className=" !ml-1 mt-1 text-black w-3 h-3 relative ">
               <ChevronDownIcon />
@@ -88,7 +90,9 @@ export default function Data({data}) {
         <div className="flex-grow bg-white flex">
           <div className="h-full flex flex-col md:w-[200px] lg:w-[250px] border-r-[1px] border-solid border-gray-300">
             <div className="w-full row-center py-10 ">
-              <p className="font-bold text-lg font-[delicious] text-[1.2rem] lg:text-[1.7rem]"><span className="font-[delicious]">MyKebi</span> Profile</p>
+              <p className="font-bold text-lg font-[delicious] text-[1.2rem] lg:text-[1.7rem]">
+                <span className="font-[delicious]">MyKebi</span> Profile
+              </p>
             </div>
             <div className="col-center py-10 space-y-8">
               <div className=" hover:cursor-pointer row-center md:pr-10 w-full px-5 p-2 lg:pl-3   space-x-3 text-gray-800 rounded-[-5px] border-r-[5px] border-solid border-orange-500">
@@ -115,7 +119,9 @@ export default function Data({data}) {
                 <div className="w-7 h-7 relative text-orange-500">
                   <ArrowLeftCircleIcon />
                 </div>
-                <p className="">Log out</p>
+                <p onClick={() => router.push("/")} className="">
+                  Log out
+                </p>
               </div>
             </div>
           </div>
@@ -123,7 +129,10 @@ export default function Data({data}) {
           <div className="flex-grow flex flex-col">
             <div className="w-full h-[200px] flex items-center px-10 md:px-20 lg:px-40 pt-[80px] ">
               <div className="row-center space-x-10">
-                <div style={{backgroundImage: "url('/profile.png')"}} className=" bg-cover h-[150px] aspect-square shadow-lg hover:cursor-pointer rounded-full "></div>
+                <div
+                  style={{ backgroundImage: "url('/profile.png')" }}
+                  className=" bg-cover h-[150px] aspect-square shadow-lg hover:cursor-pointer rounded-full "
+                ></div>
                 <div className="flex flex-col">
                   <p className="text-xl text-gray-800 ">{`${state.firstName} ${state.lastName}`}</p>
                   <p className="text-gray-500 text-sm !m-0 font-light">
@@ -207,15 +216,17 @@ export default function Data({data}) {
               </div>
               <div className="w-full h-10 flex items-center pt-[50px] justify-center">
                 <div
-                  onClick={() => dispatch({
-                    type: "save" ,
-                    firstName: firstName,
-                    lastName: lastName,
-                    location: location,
-                    email: email,
-                    number: number,
-                    postal: postal,
-                  })}
+                  onClick={() =>
+                    dispatch({
+                      type: "save",
+                      firstName: firstName,
+                      lastName: lastName,
+                      location: location,
+                      email: email,
+                      number: number,
+                      postal: postal,
+                    })
+                  }
                   className="bg-orange-500 hover:cursor-pointer shadow-lg font-bold rounded-xl px-[75px] py-3"
                 >
                   Save Changes
@@ -229,11 +240,11 @@ export default function Data({data}) {
   );
 }
 
-export async function getStaticProps(){
-  const res = await fetch("https://www.jsonkeeper.com/b/L1QC")
-  
-  const data = await res.json()
+export async function getStaticProps() {
+  const res = await fetch("https://www.jsonkeeper.com/b/L1QC");
+
+  const data = await res.json();
   return {
-    props: {data}
-  }
+    props: { data },
+  };
 }
