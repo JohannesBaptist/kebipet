@@ -7,6 +7,7 @@ import Head from "next/head";
 import Control from "../components/Control";
 import Image from "next/image";
 import Pets from "@base/components/Pets";
+import New from "@base/components/New";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import clientPromise from "@base/lib/mongodb";
@@ -34,6 +35,7 @@ export default function Home({setting}: any) {
         <Deals />
         <Advertisement />
         <Pets />
+        <New />
         <Footer />
       </main>
     </>

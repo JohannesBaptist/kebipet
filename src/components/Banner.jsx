@@ -26,10 +26,10 @@ function Banner() {
           </div>
         </div>
         <div className="grid grid-cols-4 gap-[20px]  mt-[20px] h-[200px]">
-          <div className="bg-black w-full h-full rounded-md shadow-md"></div>
-          <div className="bg-black w-full h-full rounded-md shadow-md"></div>
-          <div className="bg-black w-full h-full rounded-md shadow-md"></div>
-          <div className="bg-black w-full h-full rounded-md shadow-md"></div>
+          <div className="bg-orange-400 w-full h-full rounded-md shadow-md"></div>
+          <div className="bg-orange-400 w-full h-full rounded-md shadow-md"></div>
+          <div className="bg-orange-400 w-full h-full rounded-md shadow-md"></div>
+          <div className="bg-orange-400 w-full h-full rounded-md shadow-md"></div>
         </div>
       </div>
     </>

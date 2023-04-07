@@ -11,7 +11,7 @@ function Footer() {
   return (
     <>
       <MobileFooter />
-      <div className="mt-[10rem] hidden lg:block">
+      <div className="mt-[5rem] hidden lg:block">
         <div className="bg-[#67fecb] w-screen">
           <div
             id={"customer-service-desktop"}

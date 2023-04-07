@@ -35,7 +35,7 @@ export default function Home({ data }) {
             changed or is temporarily unavailable.
           </p>
           <div className="pt-2">
-            <div onClick={() => router.push("/")} className=" font-[delicious] text-[1.5rem] bg-base hover:scale-105 ease-in duration-100 hover:cursor-pointer font-[500] text-black text-lg px-7 py-[7px] rounded-full shadow-xl">
+            <div onClick={() => router.push("/")} className=" text-[1.5rem] bg-base hover:scale-105 ease-in duration-100 hover:cursor-pointer font-[500] text-black text-lg px-7 py-[7px] rounded-full shadow-xl">
               Back to homepage
             </div>
           </div>

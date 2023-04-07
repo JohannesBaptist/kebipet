@@ -44,20 +44,20 @@ export default function Control({ theme, setTheme }) {
     <>
       <MobileHeader />
       <div className="hidden lg:block">
-        <div className="bg-black flex items-center justify-between w-full h-[30px]  p-4 px-[100px]">
-          <div className="flex items-center justify-center text-white text-sm space-x-5">
-            <p className="text-white">
+        <div className="bg-black flex items-center justify-between w-full h-[35px]  p-4 px-[100px]">
+          <div className="  flex items-center justify-center text-white text-sm space-x-5">
+            <p className="text-white link" >
               <span className="text-bold text-[#67fecb]">Free</span> from 20
               euros
             </p>
-            <p className="text-white">
+            <p className="text-white link">
               Delivery the same day, during the evening or day.
             </p>
-            <p className="text-white">
+            <p className="text-white link">
               <span className="text-bold text-[#67fecb]">Free</span> retourning
             </p>
           </div>
-          <div className="flex items-center font-[delicious] text-lg text-[#67fecb] tracking-wider justify-center">
+          <div onClick={() => router.push("/mykebi")} className="flex items-center underline font-[delicious] hover:cursor-pointer link text-lg text-[#67fecb] tracking-wider justify-center">
             MyKebi See the benefits
           </div>
         </div>
@@ -76,19 +76,20 @@ export default function Control({ theme, setTheme }) {
               </div>
             </div>
             <div className="flex items-center justify-center space-x-[1px]">
-              <span className="text-purple-500 text-xl font-[delicious]">
+              <span className="text-purple-500 text-[2rem] font-[delicious]">
                 K
               </span>
-              <span className="text-red-800">e</span>
-              <span className="text-purple-500 font-[delicious] text-xl">
+              <span className="text-red-800 text-[1.75rem]">e</span>
+              <span className="text-purple-500 text-[2rem] font-[delicious] text-xl">
                 B
               </span>
-              <span className="text-red-800">i</span>
-              <span className="text-purple-500 font-[delicious] text-xl">
+              <span className="text-red-800 font-[delicious] text-[1.75rem]">i</span>
+              <span className="text-purple-500 text-[2rem] font-[delicious] text-xl">
                 P
               </span>
-              <span className="text-red-800">e</span>
-              <span className="text-red-800">t</span>
+              <span className="text-red-800 text-[1.75rem] ">e</span>
+              <span className="text-red-800 text-[1.75rem]">t</span>
+              <span className="text-red-800 text-[1.75rem]">s</span>
             </div>
           </div>
 
@@ -97,7 +98,7 @@ export default function Control({ theme, setTheme }) {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="que estas buscando?"
               onKeyDown={handleKeyDown}
-              className="focus:outline-none text-xs bg-white w-full text-black p-1 rounded-full h-full"
+              className="focus:outline-none text-[14px] bg-white w-full text-black p-1 rounded-full h-full"
             ></input>
             <div
               onClick={searchSubmit}
@@ -110,7 +111,7 @@ export default function Control({ theme, setTheme }) {
           <div className="flex items-center justify-center space-x-5">
             <div className=" text-black flex items-center justify-center space-x-4">
               {!user ? (
-                <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
+                <div className=" bg-black text-white hover:cursor-pointer rounded-full p-1 px-2 flex items-center justify-center space-x-1">
                   <div
                     onClick={() => router.push("/api/auth/login")}
                     className="w-7 h-7 relative"
@@ -120,7 +121,7 @@ export default function Control({ theme, setTheme }) {
                   <Link href="/api/auth/login">login</Link>
                 </div>
               ) : (
-                <div className=" bg-white rounded-full p-1 px-2 flex items-center justify-center space-x-1">
+                <div className=" bg-black text-white hover:cursor-pointer rounded-full p-1 px-3 flex items-center justify-center space-x-1">
                   <div
                     onClick={() => router.push("/api/auth/logout")}
                     className="w-7 h-7 relative"
@@ -130,33 +131,28 @@ export default function Control({ theme, setTheme }) {
                   <Link href="/api/auth/logout">logout</Link>
                 </div>
               )}
-              <div className="w-7 h-7 relative">
+              <div className="w-7 h-7 hover:cursor-pointer relative">
                 <ShoppingCartIcon />
               </div>
-              <SocialIcon
-                bgColor={""}
-                style={{ height: "30px", width: "30px" }}
-                url="https://instagram.com/kebipet2023/?igshid=YmMyMTA2M2Y%3D"
-              />
             </div>
           </div>
         </div>
         <div className="flex items-center justify-between bg-white p-4 h-[75px] px-[100px]">
           <div className="flex items-center justify-center space-x-7">
             <div className="flex items-center justify-center space-x-3 hover:cursor-pointer">
-              <p className=" text-black">Categories</p>
+              <p className=" text-black text-sm">Categories</p>
               <div className="w-5 h-5 relative text-black">
                 <ChevronDownIcon />
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 hover:cursor-pointer">
-              <p className="text-black">Gifts & Inspiration</p>
+              <p className="text-black text-sm">Gifts & Inspiration</p>
               <div className="w-5 h-5 relative text-black">
                 <ChevronDownIcon />
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 hover:cursor-pointer">
-              <p className="text-black">Discounts</p>
+              <p className="text-black text-sm">Discounts</p>
               <div className="w-5 h-5 relative text-black">
                 <ChevronDownIcon />
               </div>
@@ -166,9 +162,9 @@ export default function Control({ theme, setTheme }) {
             <p className="">Business</p>
             <p className="">Vouchers</p>
             <p className="!mr-[20px]">Customer serivce</p>
-            <div className="flex items-center justify-center ">
-              <span class=" text-[20px] fi fi-gb mt-[1px] mr-1 "></span>
-              <p className="text-black  text-[15px]">ES</p>
+            <div className="flex items-center justify-center hover:cursor-pointer ">
+              <span class=" text-[20px] fi fi-es mt-[1px] mr-2 rounded-sm"></span>
+              <p className="text-black  text-[15px] ">ES</p>
               <div className="w-5 h-5 relative text-black">
                 <ChevronDownIcon />
               </div>
