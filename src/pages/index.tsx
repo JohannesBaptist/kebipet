@@ -22,7 +22,7 @@ export default function Home({setting}: any) {
   return (
     <>
       <Head>
-        <title>KebiPets - Homepage</title>
+        <title>KebiPets | Homepage</title>
         <meta name="description" content="Your Favourite Pet Palace" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />

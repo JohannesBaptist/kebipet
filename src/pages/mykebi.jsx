@@ -60,10 +60,10 @@ export default function Data({data}) {
   return (
     <>
       <Head>
-        <title>Search Page</title>
+        <title>KebiPets | User Profile</title>
         <meta name="description" content="Your Favourite Pet Palace" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="w-screen h-screen flex flex-col">
         <div

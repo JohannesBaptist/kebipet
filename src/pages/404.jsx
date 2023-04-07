@@ -19,7 +19,7 @@ export default function Home({ data }) {
           content="A blank Tailwind template made by Sample-IT"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="bg-black w-screen h-screen col-center ">
         <p className="absolute top-0 left-0 text-xl p-5 font-[delicious] font-[100] text-base">Kebi Pet Palace 2023</p>
